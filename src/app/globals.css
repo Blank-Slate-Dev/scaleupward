@@ -8,13 +8,21 @@
   --color-navy-800: #0f2040;
   --color-navy-700: #1a3260;
 
-  /* Blue */
-  --color-blue-50: #eff6ff;
-  --color-blue-100: #dbeafe;
-  --color-blue-200: #bfdbfe;
-  --color-blue-400: #4d8fff;
-  --color-blue-500: #1d6fff;
-  --color-blue-600: #1558cc;
+  /* Blue — cyan highlight → deep blue base */
+  --color-blue-50: #edfcfd;
+  --color-blue-100: #d0f7fa;
+  --color-blue-200: #a0eff5;
+  --color-blue-400: #2EC1DA;
+  --color-blue-500: #1F8FCD;
+  --color-blue-600: #1B6FC6;
+
+  /* Full brand palette */
+  --color-cyan-bright: #38D6E3;
+  --color-cyan-soft: #2EC1DA;
+  --color-cyan-mid: #27A9D2;
+  --color-blue-core: #1F8FCD;
+  --color-blue-deep: #1B6FC6;
+  --color-blue-base: #1E4FBC;
 
   /* Neutral */
   --color-neutral-50: #f8fafc;
@@ -71,7 +79,23 @@ h1, h2, h3, h4, h5, h6 {
   background-size: 60px 60px;
 }
 
-/* Float animation */
+/* Hover cards */
+.service-card:hover {
+  background: white !important;
+  border-color: var(--color-blue-100) !important;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(29,111,255,0.08);
+}
+
+.case-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+  border-color: var(--color-blue-100) !important;
+}
+
+.footer-link:hover {
+  color: white !important;
+}
 @keyframes float-gentle {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }

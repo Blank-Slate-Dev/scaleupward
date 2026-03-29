@@ -14,7 +14,7 @@ const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white">
+    <section className="relative min-h-screen flex items-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white">
       {/* Grid background */}
       <div
         className="absolute inset-0 bg-grid opacity-40 pointer-events-none"

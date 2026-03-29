@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -30,22 +31,21 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-white/90 backdrop-blur-md border-b border-neutral-200 shadow-sm py-3"
-            : "bg-white/0 border-b border-transparent py-5"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-neutral-200 ${
+          scrolled ? "shadow-sm py-2" : "py-3"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo */}
-          <a href="/" className="flex items-center gap-2.5 no-underline">
-            <LogoIcon />
-            <span
-              className="font-[family-name:var(--font-heading)] text-xl font-800 text-navy-900"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              Scale<span className="text-blue-500">Upward</span>
-            </span>
+          {/* Logo — using logo_thin.png (928h x 257w, so very tall/narrow — render at fixed height) */}
+          <a href="/" className="flex items-center no-underline">
+            <Image
+              src="/logo_thin.png"
+              alt="ScaleUpward"
+              width={257}
+              height={928}
+              style={{ height: "52px", width: "auto" }}
+              priority
+            />
           </a>
 
           {/* Desktop links */}
@@ -66,7 +66,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 bg-navy-900 text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-navy-800 transition-colors no-underline"
+              className="inline-flex items-center gap-2 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors no-underline"
               style={{ backgroundColor: "var(--color-navy-900)" }}
             >
               Get Started
@@ -106,7 +106,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={() => setMobileOpen(false)}
-            className="mt-8 w-full flex items-center justify-center gap-2 bg-navy-900 text-white text-sm font-semibold px-5 py-4 rounded-xl no-underline"
+            className="mt-8 w-full flex items-center justify-center gap-2 text-white text-sm font-semibold px-5 py-4 rounded-xl no-underline"
             style={{ backgroundColor: "var(--color-navy-900)" }}
           >
             Get Started →
@@ -114,18 +114,6 @@ export default function Navbar() {
         </div>
       )}
     </>
-  );
-}
-
-function LogoIcon() {
-  return (
-    <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="2" y="20" width="8" height="14" rx="2" fill="var(--color-navy-900)" />
-      <rect x="14" y="14" width="8" height="20" rx="2" fill="var(--color-navy-900)" />
-      <rect x="26" y="6" width="8" height="28" rx="2" fill="var(--color-navy-900)" />
-      <path d="M6 18 L18 10 L30 4" stroke="var(--color-blue-500)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M27 4 L30 4 L30 7" stroke="var(--color-blue-500)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
   );
 }
 

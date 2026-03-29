@@ -1,4 +1,6 @@
 // src/components/Services.tsx
+"use client";
+
 import { Monitor, Layers, Search, Zap } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -87,24 +89,11 @@ export default function Services() {
             return (
               <div
                 key={service.title}
-                className="group rounded-2xl p-9 transition-all duration-250 cursor-default"
+                className="service-card group rounded-2xl p-9 cursor-default"
                 style={{
                   background: "var(--color-neutral-50)",
                   border: "1.5px solid var(--color-neutral-200)",
-                }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget;
-                  el.style.background = "white";
-                  el.style.borderColor = "var(--color-blue-100)";
-                  el.style.transform = "translateY(-4px)";
-                  el.style.boxShadow = "0 16px 48px rgba(29,111,255,0.08)";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget;
-                  el.style.background = "var(--color-neutral-50)";
-                  el.style.borderColor = "var(--color-neutral-200)";
-                  el.style.transform = "translateY(0)";
-                  el.style.boxShadow = "none";
+                  transition: "all 0.25s",
                 }}
               >
                 <div

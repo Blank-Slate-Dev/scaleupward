@@ -1,4 +1,5 @@
 // src/components/Footer.tsx
+"use client";
 
 const footerLinks = {
   Services: [
@@ -62,15 +63,8 @@ export default function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm no-underline transition-colors"
+                      className="footer-link text-sm no-underline transition-colors"
                       style={{ color: "rgba(255,255,255,0.4)", fontFamily: "var(--font-body)" }}
-                      onMouseEnter={(e) =>
-                        ((e.target as HTMLAnchorElement).style.color = "white")
-                      }
-                      onMouseLeave={(e) =>
-                        ((e.target as HTMLAnchorElement).style.color =
-                          "rgba(255,255,255,0.4)")
-                      }
                     >
                       {link.label}
                     </a>

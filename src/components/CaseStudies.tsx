@@ -1,4 +1,5 @@
 // src/components/CaseStudies.tsx
+"use client";
 
 interface CaseMetric {
   label: string;
@@ -180,21 +181,10 @@ export default function CaseStudies() {
           {rest.map((c) => (
             <div
               key={c.title}
-              className="rounded-2xl overflow-hidden transition-all duration-200 hover:-translate-y-1"
+              className="case-card-hover rounded-2xl overflow-hidden transition-all duration-200"
               style={{
                 background: "white",
                 border: "1.5px solid var(--color-neutral-200)",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.boxShadow =
-                  "0 16px 48px rgba(0,0,0,0.08)";
-                (e.currentTarget as HTMLDivElement).style.borderColor =
-                  "var(--color-blue-100)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
-                (e.currentTarget as HTMLDivElement).style.borderColor =
-                  "var(--color-neutral-200)";
               }}
             >
               <div
